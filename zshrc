@@ -3,6 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+export TERM="xterm-256color"
 
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
@@ -10,7 +11,7 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(icons_test)
 
 POWERLEVEL9K_COLOR_SCHEME='dark'
 POWERLEVEL9K_MODE='nerdfont-complete'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=( newline ip date time battery ram newline os_icon dir  status)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=( newline ip time load ram battery newline os_icon dir  status)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(ssh rbenv vcs)
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="\n"
 
@@ -18,18 +19,24 @@ POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="\n"
 POWERLEVEL9K_OS_ICON_BACKGROUND=white 
 POWERLEVEL9K_OS_ICON_FOREGROUND=black
 
-POWERLEVEL9K_BATTERY_DISCONNECTED_BACKGROUND=white
-POWERLEVEL9K_BATTERY_CHARGING_BACKGROUND=white
+POWERLEVEL9K_BATTERY_DISCONNECTED_BACKGROUND=blue
+POWERLEVEL9K_BATTERY_CHARGING_BACKGROUND=blue
+POWERLEVEL9K_BATTERY_CHARGING_FOREGROUND=black
 POWERLEVEL9K_BATTERY_DISCONNECTED_FOREGROUND=black
 
 POWERLEVEL9K_BATTERY_LOW_BACKGROUND=red
 POWERLEVEL9K_BATTERY_LOW_FOREGROUND=black
 
+POWERLEVEL9K_RAM_BACKGROUND=red
+POWERLEVEL9K_RAM_FOREGROUND=black
 
-POWERLEVEL9K_TIME_BACKGROUND=green
-POWERLEVEL9K_TIME_FOREGROUND=black
+POWERLEVEL9K_IP_BACKGROUND=white
+#POWERLEVEL9K_IP_FOREGROUND=black
 
-POWERLEVEL9K_DATE_BACKGROUND=red
+POWERLEVEL9K_TIME_BACKGROUND=yellow
+#POWERLEVEL9K_TIME_FOREGROUND=black
+
+POWERLEVEL9K_DATE_BACKGROUND=blue
 #POWERLEVEL9K_DATE_FOREGROUND=black
 
 POWERLEVEL9K_STATUS_VERBOSE=true
@@ -37,7 +44,7 @@ POWERLEVEL9K_STATUS_CROSS=true
 POWERLEVEL9K_STATUS_OK_BACKGROUND=green
 POWERLEVEL9K_STATUS_ERROR_BACKGROUND=red
 
-plugins=(git)
+#plugins=(git z rails ruby nmap zsh-autosuggestions)
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -97,7 +104,8 @@ plugins=(git)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git z rails ruby nmap zsh-autosuggestions zsh-syntax-highlighting)
+
 
 source $ZSH/oh-my-zsh.sh
 
@@ -126,3 +134,5 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias myip="curl http://ipecho.net/plain; echo"
+alias sp="spotifycli"
