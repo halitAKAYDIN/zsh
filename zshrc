@@ -44,7 +44,7 @@ POWERLEVEL9K_STATUS_CROSS=true
 POWERLEVEL9K_STATUS_OK_BACKGROUND=green
 POWERLEVEL9K_STATUS_ERROR_BACKGROUND=red
 
-#plugins=(git z rails ruby nmap zsh-autosuggestions)
+#plugins=(git rails ruby nmap zsh-autosuggestions)
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -134,5 +134,3 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias myip="curl http://ipecho.net/plain; echo"
-alias sp="spotifycli"
